@@ -16,8 +16,6 @@ ALIVE = [255, 255, 255]
 PAUSED = False
 LIVELIHOOD = 0.75
 
-
-a = 0
 for j in range(0, rows):
     for i in range(0, cols):
         state = DEAD
@@ -44,7 +42,6 @@ def calulateNeighbours(i, j):
 def calculateNextBoard():
     global squares
     newsquares = []
-    global a
     for square in squares:
         newsquare = {}
         newsquare['state'] = square.color
@@ -102,5 +99,5 @@ def update(dt):
         calculateNextBoard()
 
 
-pyglet.clock.schedule_interval(update, 1/10)
+pyglet.clock.schedule_interval(update, 1/5)
 pyglet.app.run()
